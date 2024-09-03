@@ -4,25 +4,23 @@ namespace App\Filament\Resources;
 
 use Filament\Forms;
 use Filament\Tables;
-use App\Models\Produk;
+use App\Models\Tokos;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Card;
-use Filament\Forms\Components\Hidden;
-use Filament\Forms\Components\Select;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Components\FileUpload;
 use Illuminate\Database\Eloquent\Builder;
-use App\Filament\Resources\ProdukResource\Pages;
+use App\Filament\Resources\TokosResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\ProdukResource\RelationManagers;
+use App\Filament\Resources\TokosResource\RelationManagers;
 
-class ProdukResource extends Resource
+class TokosResource extends Resource
 {
-    protected static ?string $model = Produk::class;
+    protected static ?string $model = Tokos::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -31,21 +29,23 @@ class ProdukResource extends Resource
         return $form
             ->schema([
                 Card::make([
-                    TextInput::make('nama_produk')
+                    TextInput::make('name')
                     ->required()
-                    ->label('Nama Produk'),
-                    Hidden::make('toko_id')
-                ->default(auth()->user()->id) // Mengatur nilai default sesuai auth user
-                ->required(),
-                    TextInput::make('harga')
+                    ->label('Nama Toko'),
+                    TextInput::make('email')
                     ->required()
-                    ->label('Harga Produk'),
-                    TextInput::make('stok')
+                    ->label('Email'),
+                    TextInput::make('phone')
                     ->required()
                     ->numeric()
-                    ->label('Stok Produk'),  
+                    ->label('Nomor HP'),
+                    TextInput::make('password')
+                    ->required()
+                    ->password()
+                    ->minLength(8)
+                    ->label('Password'),  
                     FileUpload::make('foto')
-                    ->label('Foto Produk'),
+                    ->label('Foto Toko'),
                 ])
             ]);
     }
@@ -54,22 +54,15 @@ class ProdukResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('nama_produk')
-                ->label('Nama Produk'),
-                TextColumn::make('tokos.name')
+                TextColumn::make('name')
                 ->label('Nama Toko'),
-                TextColumn::make('harga')
-                ->label('Harga Produk'),
-                TextColumn::make('stok')
-                ->label('Stok Tersisa'),
+                TextColumn::make('email')
+                ->label('Email'),
+                TextColumn::make('phone')
+                ->label('Nomor HP'),
                 ImageColumn::make('foto')
                 ->label('Foto Toko'),
             ])
-            ->modifyQueryUsing(function (Builder $query) {
-                if (auth() -> user()->role === 'user') {
-                    return $query->where('toko_id', auth()-id());
-                }
-            })
             ->filters([
                 //
             ])
@@ -93,9 +86,9 @@ class ProdukResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListProduks::route('/'),
-            'create' => Pages\CreateProduk::route('/create'),
-            'edit' => Pages\EditProduk::route('/{record}/edit'),
+            'index' => Pages\ListTokos::route('/'),
+            'create' => Pages\CreateTokos::route('/create'),
+            'edit' => Pages\EditTokos::route('/{record}/edit'),
         ];
     }
 }

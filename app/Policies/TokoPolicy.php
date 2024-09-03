@@ -13,7 +13,7 @@ class TokoPolicy
      */
     public function viewAny(User $user): bool
     {
-        return $user->hasRole(['Admin']);
+        return $user->hasRole(['Admin','Seller']);
     }
 
     /**
@@ -21,7 +21,7 @@ class TokoPolicy
      */
     public function view(User $user, Toko $toko): bool
     {
-         return $user->hasRole(['Admin']);
+        return $user->hasRole(['Admin','Seller']);
     }
 
     /**
@@ -29,7 +29,7 @@ class TokoPolicy
      */
     public function create(User $user): bool
     {
-         return $user->hasRole(['Admin']);
+        return $user->hasRole(['Admin','Seller']);
     }
 
     /**
@@ -37,7 +37,7 @@ class TokoPolicy
      */
     public function update(User $user, Toko $toko): bool
     {
-         return $user->hasRole(['Admin']);
+        return $user->hasRole(['Admin','Seller']);
     }
 
     /**
@@ -45,7 +45,7 @@ class TokoPolicy
      */
     public function delete(User $user, Toko $toko): bool
     {
-         return $user->hasRole(['Admin']);
+        return $user->hasRole(['Admin','Seller']);
     }
 
     /**
@@ -53,7 +53,7 @@ class TokoPolicy
      */
     public function restore(User $user, Toko $toko): bool
     {
-         return $user->hasRole(['Admin']);
+        return $user->hasRole(['Admin','Seller']);
     }
 
     /**
@@ -61,6 +61,6 @@ class TokoPolicy
      */
     public function forceDelete(User $user, Toko $toko): bool
     {
-         return $user->hasRole(['Admin']);
+        return $user->hasRole(['Admin','Seller']);
     }
 }

@@ -3,11 +3,11 @@
 namespace App\Filament\Resources;
 
 use Filament\Forms;
+use App\Models\Role;
 use Filament\Tables;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
-use Spatie\Permission\Models\Role;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Illuminate\Database\Eloquent\Builder;

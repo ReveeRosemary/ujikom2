@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
         ]);
         $role1 = Role::create(['name' => 'Admin']);
         $role2 = Role::create(['name' => 'Seller']);
+        $role3 = Role::create(['name' => 'Buyer']);
         $user1->assignRole($role1);
     }
 }

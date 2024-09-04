@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keranjang - IceSicle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <!-- Navbar -->
+    <nav class="bg-gray-900 p-4 fixed top-0 left-0 w-full flex justify-between items-center">
+        <h1 class="text-2xl font-bold ml-3">IceSicle</h1>
+        <div class="relative">
+            <div id="profileButton" class="bg-gray-600 rounded-full w-8 h-8 cursor-pointer mr-3"></div>
+            <!-- Dropdown Menu -->
+            <div id="dropdownMenu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 text-gray-800 z-50">
+                <a href="cart.html" class="block px-4 py-2 hover:bg-gray-100">Keranjang</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Pesanan</a>
+                <a href="login.html" class="block px-4 py-2 hover:bg-gray-100">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Container -->
+    <div class="container mx-auto mt-20 p-6">
+        <h2 class="text-3xl font-bold mb-6 text-center">Keranjang Belanja</h2>
+
+        <!-- Cart Table -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <table class="w-full text-left">
+                <thead>
+                    <tr class="border-b border-gray-600">
+                        <th class="py-3 px-4">Produk</th>
+                        <th class="py-3 px-4">Kuantitas</th>
+                        <th class="py-3 px-4">Harga</th>
+                        <th class="py-3 px-4">Total</th>
+                        <th class="py-3 px-4">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-gray-600">
+                        <td class="py-3 px-4">Premium Ice Cream</td>
+                        <td class="py-3 px-4">
+                            <input type="number" value="2" class="w-16 text-center bg-gray-700 border border-gray-600 text-white rounded">
+                        </td>
+                        <td class="py-3 px-4">Rp. 300.000</td>
+                        <td class="py-3 px-4">Rp. 600.000</td>
+                        <td class="py-3 px-4">
+                            <button class="bg-red-600 px-3 py-1 rounded text-white hover:bg-red-700">Hapus</button>
+                        </td>
+                    </tr>
+                    <!-- You can repeat similar rows for more products -->
+                </tbody>
+            </table>
+
+            <!-- Cart Total -->
+            <div class="mt-6 text-right">
+                <p class="text-xl font-bold">Total: Rp. 600.000</p>
+            </div>
+
+            <!-- Checkout Button -->
+            <div class="flex justify-end mt-6">
+                <button class="bg-gray-700 px-6 py-3 text-white font-semibold rounded hover:bg-gray-600">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script for dropdown menu -->
+    <script>
+        // Dropdown menu functionality
+        document.getElementById('profileButton').addEventListener('click', () => {
+            const dropdownMenu = document.getElementById('dropdownMenu');
+            dropdownMenu.classList.toggle('hidden');
+        });
+     
+        // Hide dropdown if clicked outside
+        document.addEventListener('click', (event) => {
+            const dropdownMenu = document.getElementById('dropdownMenu');
+            if (!event.target.closest('#profileButton') && !event.target.closest('#dropdownMenu')) {
+                dropdownMenu.classList.add('hidden');
+            }
+        });
+    </script>
+
+</body>
+</html>

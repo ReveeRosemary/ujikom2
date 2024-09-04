@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IceSicle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-800 text-gray-200 flex items-center justify-center h-screen">
+
+    <!-- Navbar -->
+    <nav class="bg-gray-900 p-4 fixed top-0 left-0 w-full flex justify-between items-center">
+        <h1 class="text-2xl font-bold ml-3">IceSicle</h1>
+        <div class="relative">
+            <div id="profileButton" class="bg-gray-600 rounded-full w-8 h-8 cursor-pointer mr-3"></div>
+            <!-- Dropdown Menu -->
+            <div id="dropdownMenu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 text-gray-800 z-50">
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Keranjang</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Pesanan</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Card -->
+    <div class="bg-gray-300 p-8 rounded-lg shadow-md flex items-center relative" style="transform: scale(1.5);">
+        
+        <!-- Close Button -->
+        <button onclick="window.location.href='index.html'" class="absolute top-2 right-2 text-gray-800 font-bold">X</button>
+
+        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.chapmans.ca%2Fwp-content%2Fuploads%2F2019%2F07%2F062942001460_f_en-350x350.png&f=1&nofb=1&ipt=ba2b8ef311ee026ffdfe15909d49f1b2b3917500035fd505f05c860464f8cfe5&ipo=images" alt="Premium Ice Cream" class="w-60 h-60 object-cover rounded-lg">
+        <div class="ml-8">
+            <h2 class="text-2xl font-bold text-gray-800">Premium Ice Cream</h2>
+            <p class="text-gray-700">Chapman's</p>
+            <p class="text-gray-700">Rp. 300.000</p>
+            <div class="flex items-center mt-4">
+                <span class="text-gray-700">Kuantitas</span>
+                <div class="flex items-center border border-gray-400 rounded ml-2">
+                    <button id="decrementButton" class="px-3 py-2 text-gray-800">-</button>
+                    <input id="quantityInput" type="text" value="0" class="w-12 text-center border-none outline-none text-gray-800" readonly>
+                    <button id="incrementButton" class="px-3 py-2 text-gray-800">+</button>
+                </div>
+                <p class="ml-6 text-gray-700">Stok: 20</p>
+            </div>
+            <button class="mt-6 px-6 py-3 bg-red-600 text-white font-semibold rounded">BELI</button>
+        </div>
+    </div>
+
+    <!-- Script for dropdown menu and quantity buttons -->
+    <script>
+            // Dropdown menu functionality
+            document.getElementById('profileButton').addEventListener('click', () => {
+                const dropdownMenu = document.getElementById('dropdownMenu');
+                dropdownMenu.classList.toggle('hidden');
+            });
+     
+            // Hide dropdown if clicked outside
+            document.addEventListener('click', (event) => {
+                const dropdownMenu = document.getElementById('dropdownMenu');
+                if (!event.target.closest('#profileButton') && !event.target.closest('#dropdownMenu')) {
+                    dropdownMenu.classList.add('hidden');
+                }
+            });
+
+        // Quantity Increment and Decrement
+        const quantityInput = document.getElementById('quantityInput');
+        const incrementButton = document.getElementById('incrementButton');
+        const decrementButton = document.getElementById('decrementButton');
+
+        incrementButton.addEventListener('click', () => {
+            let currentValue = parseInt(quantityInput.value);
+            quantityInput.value = currentValue + 1;
+        });
+
+        decrementButton.addEventListener('click', () => {
+            let currentValue = parseInt(quantityInput.value);
+            if (currentValue > 0) {
+                quantityInput.value = currentValue - 1;
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -14,10 +14,10 @@ class Toko extends Model
     protected $guarded = ['id'];
 
     public function produks() {
-        return $this->belongsToMany(Produk::class, 'toko_produk');
+        return $this->belongsToMany(Produk::class, 'toko_produk', 'toko_id', 'id');
     }
 
     public function user() {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 }

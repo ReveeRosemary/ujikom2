@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Filament\Auth;
 
 use App\Models\Toko;
@@ -47,12 +46,17 @@ class Register extends AuthRegister
         ]);
 
         // Buat Toko Baru yang berelasi dengan user
-        Toko::create([
-            'name' => $data['name'] . "'s Toko", // Ngaran tokona
-            'user_id' => $user->id, // Asosiasi jeung pamaké anu nembé dijieun
-            'email' => $data['email'], // Méré nilai keur kolom email
+        $toko = Toko::create([
+            'name' => $data['name'] . "'s Toko", // Nama toko
+            'user_id' => $user->id, // Asosiasi dengan pengguna yang baru dibuat
+            'email' => $data['email'],
+            'phone' => $data['phone'],
+            'password' => $data['password'], // Ini mungkin sebaiknya tidak disimpan langsung
         ]);
-        
+
+        // Update toko_id di tabel users
+        $user->toko_id = $toko->id;
+        $user->save();
 
         // Login user setelah registrasi
         auth()->login($user);

@@ -11,8 +11,8 @@ class Produk extends Model
     use HasFactory;
     protected $guarded = ['id'];
 
-    public function tokos()
+    public function toko()
     {
-        return $this->belongsToMany(Toko::class, 'toko_produk');
+        return $this->belongsTo(Toko::class, 'toko_id', 'id');
     }
 }

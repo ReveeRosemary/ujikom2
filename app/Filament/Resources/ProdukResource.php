@@ -34,9 +34,6 @@ class ProdukResource extends Resource
                     TextInput::make('nama_produk')
                     ->required()
                     ->label('Nama Produk'),
-                    Hidden::make('toko_id')
-                ->default(auth()->user()->id) // Mengatur nilai default sesuai auth user
-                ->required(),
                     TextInput::make('harga')
                     ->required()
                     ->label('Harga Produk'),
@@ -46,6 +43,9 @@ class ProdukResource extends Resource
                     ->label('Stok Produk'),  
                     FileUpload::make('foto')
                     ->label('Foto Produk'),
+                    Hidden::make('toko_id')
+                    ->default(auth()->user()->toko_id) // Mengatur nilai default sesuai auth user
+                    ->required(),
                 ])
             ]);
     }
@@ -56,7 +56,7 @@ class ProdukResource extends Resource
             ->columns([
                 TextColumn::make('nama_produk')
                 ->label('Nama Produk'),
-                TextColumn::make('tokos.name')
+                TextColumn::make('toko.name')
                 ->label('Nama Toko'),
                 TextColumn::make('harga')
                 ->label('Harga Produk'),
@@ -66,8 +66,8 @@ class ProdukResource extends Resource
                 ->label('Foto Toko'),
             ])
             ->modifyQueryUsing(function (Builder $query) {
-                if (auth() -> user()->role === 'user') {
-                    return $query->where('toko_id', auth()-id());
+                if (auth() -> user()->role === 'Seller') {
+                    return $query->where('toko_id', auth()->user()->toko_id);
                 }
             })
             ->filters([

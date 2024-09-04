@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IceSicle - Products</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-800 text-white">
+    <!-- Navbar -->
+    <nav class="bg-gray-900 p-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold ml-3">IceSicle</h1>
+        <div class="relative">
+            <div id="profileButton" class="bg-gray-600 rounded-full w-8 h-8 cursor-pointer mr-3"></div>
+            <!-- Dropdown Menu -->
+            <div id="dropdownMenu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 text-gray-800 z-50">
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Keranjang</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Pesanan</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto py-8">
+        <!-- Bestseller Carousel -->
+        <h2 class="text-4xl font-bold text-center mb-6">Bestseller</h2>
+        <div id="carousel" class="relative overflow-hidden">
+            <div class="flex transition-transform duration-500 ease-in-out">
+                <!-- Product items -->
+                <div class="w-full sm:w-1/2 lg:w-1/5 flex-shrink-0 p-4 flex items-center justify-center">
+                    <a href="/detil_produk/1" class="w-full h-full flex items-center justify-center">
+                        <div class="bg-gray-700 rounded-lg p-4 text-center w-full h-full flex flex-col items-center justify-between">
+                            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.chapmans.ca%2Fwp-content%2Fuploads%2F2019%2F07%2F062942001460_f_en-350x350.png&f=1&nofb=1&ipt=ba2b8ef311ee026ffdfe15909d49f1b2b3917500035fd505f05c860464f8cfe5&ipo=images" alt="Premium Ice Cream" class="mb-4 rounded-md w-24 h-24 object-cover">
+                            <h3 class="text-xl font-semibold mb-2">Premium Ice Cream</h3>
+                            <p class="text-lg">Rp. 300.000</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="w-full sm:w-1/2 lg:w-1/5 flex-shrink-0 p-4 flex items-center justify-center">
+                    <a href="/detil_produk/2" class="w-full h-full flex items-center justify-center">
+                        <div class="bg-gray-700 rounded-lg p-4 text-center w-full h-full flex flex-col items-center justify-between">
+                            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fshop.perrysicecream.com%2Fcdn%2Fshop%2Fproducts%2FAllAmerican_250x250%402x.png%3Fv%3D1639682710&f=1&nofb=1&ipt=af30bbcfbc17f9d269e12c1b14eb878d45f2741399a9a6d2db259149df80d58b&ipo=images" alt="All American" class="mb-4 rounded-md w-24 h-24 object-cover">
+                            <h3 class="text-xl font-semibold mb-2">All American</h3>
+                            <p class="text-lg">Rp. 150.000</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="w-full sm:w-1/2 lg:w-1/5 flex-shrink-0 p-4 flex items-center justify-center">
+                    <a href="/detil_produk/3" class="w-full h-full flex items-center justify-center">
+                        <div class="bg-gray-700 rounded-lg p-4 text-center w-full h-full flex flex-col items-center justify-between">
+                            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.hersheyicecream.com%2Fimages%2Fhome-hover-quarts.png&f=1&nofb=1&ipt=87732f27ab24fa259d9bdc68b174bd9e0dacababafe56fb743ad6e7e04c4ca51&ipo=images" alt="Green Mint Chip" class="mb-4 rounded-md w-24 h-24 object-cover">
+                            <h3 class="text-xl font-semibold mb-2">Green Mint Chip</h3>
+                            <p class="text-lg">Rp. 80.000</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="w-full sm:w-1/2 lg:w-1/5 flex-shrink-0 p-4 flex items-center justify-center">
+                    <a href="/detil_produk/4" class="w-full h-full flex items-center justify-center">
+                        <div class="bg-gray-700 rounded-lg p-4 text-center w-full h-full flex flex-col items-center justify-between">
+                            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.cpdubai.com%2Fwp-content%2Fuploads%2F2018%2F10%2Fcarmel.png&f=1&nofb=1&ipt=e8d78434062e38d31f8676a539db76d2c752c627de33551750ce7c2c929fba86&ipo=images" alt="CremeRich" class="mb-4 rounded-md w-24 h-24 object-cover">
+                            <h3 class="text-xl font-semibold mb-2">CremeRich</h3>
+                            <p class="text-lg">Rp. 90.000</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="w-full sm:w-1/2 lg:w-1/5 flex-shrink-0 p-4 flex items-center justify-center">
+                    <a href="/detil_produk/5" class="w-full h-full flex items-center justify-center">
+                        <div class="bg-gray-700 rounded-lg p-4 text-center w-full h-full flex flex-col items-center justify-between">
+                            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Faldensicecream.com%2Fwp-content%2Fuploads%2F2021%2F02%2FDF_Sammies_KeyLime_M-1.png&f=1&nofb=1&ipt=e4b8b559899ea3cd8885a7c37ce8f24b4c57ab357c1f76591ac62e6150e3e396&ipo=images" alt="Dairy Free Ice Cream" class="mb-4 rounded-md w-24 h-24 object-cover">
+                            <h3 class="text-xl font-semibold mb-2">Dairy Free</h3>
+                            <p class="text-lg">Rp. 150.000</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="w-full sm:w-1/2 lg:w-1/5 flex-shrink-0 p-4 flex items-center justify-center">
+                    <a href="/detil_produk/6" class="w-full h-full flex items-center justify-center">
+                        <div class="bg-gray-700 rounded-lg p-4 text-center w-full h-full flex flex-col items-center justify-between">
+                            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.bulla.com.au%2Fwp-content%2Fuploads%2F2022%2F08%2FCreamy-Classics-2L-Neapolitan.png&f=1&nofb=1&ipt=09396cb6b40285da572bd6db1caf796d71b4414127639a7356871f80faef7dee&ipo=images" alt="New Product" class="mb-4 rounded-md w-24 h-24 object-cover">
+                            <h3 class="text-xl font-semibold mb-2">Creamy Neopolitan</h3>
+                            <p class="text-lg">Rp. 200.000</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- Controls -->
+            <button id="prevButton" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-900 bg-opacity-50 p-2 rounded-full hover:bg-opacity-75">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+            <button id="nextButton" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-900 bg-opacity-50 p-2 rounded-full hover:bg-opacity-75">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- New Arrivals Carousel -->
+        <h2 class="text-4xl font-bold text-center mb-6">New Arrivals</h2>
+        <div id="carousel" class="relative overflow-hidden">
+            <div class="flex transition-transform duration-500 ease-in-out">
+                <!-- Product items -->
+                <div class="w-full sm:w-1/2 lg:w-1/5 flex-shrink-0 p-4 flex items-center justify-center">
+                    <a href="/detil_produk/1" class="w-full h-full flex items-center justify-center">
+                        <div class="bg-gray-700 rounded-lg p-4 text-center w-full h-full flex flex-col items-center justify-between">
+                            <img src="https://via.placeholder.com/150" alt="Premium Ice Cream" class="mb-4 rounded-md w-24 h-24 object-cover">
+                            <h3 class="text-xl font-semibold mb-2">Premium Ice Cream</h3>
+                            <p class="text-lg">Rp. 300.000</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="w-full sm:w-1/2 lg:w-1/5 flex-shrink-0 p-4 flex items-center justify-center">
+                    <a href="/detil_produk/2" class="w-full h-full flex items-center justify-center">
+                        <div class="bg-gray-700 rounded-lg p-4 text-center w-full h-full flex flex-col items-center justify-between">
+                            <img src="https://via.placeholder.com/150" alt="All American" class="mb-4 rounded-md w-24 h-24 object-cover">
+                            <h3 class="text-xl font-semibold mb-2">All American</h3>
+                            <p class="text-lg">Rp. 150.000</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="w-full sm:w-1/2 lg:w-1/5 flex-shrink-0 p-4 flex items-center justify-center">
+                    <a href="/detil_produk/3" class="w-full h-full flex items-center justify-center">
+                        <div class="bg-gray-700 rounded-lg p-4 text-center w-full h-full flex flex-col items-center justify-between">
+                            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.hersheyicecream.com%2Fimages%2Fhome-hover-quarts.png&f=1&nofb=1&ipt=87732f27ab24fa259d9bdc68b174bd9e0dacababafe56fb743ad6e7e04c4ca51&ipo=images" alt="Green Mint Chip" class="mb-4 rounded-md w-24 h-24 object-cover">
+                            <h3 class="text-xl font-semibold mb-2">Green Mint Chip</h3>
+                            <p class="text-lg">Rp. 80.000</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="w-full sm:w-1/2 lg:w-1/5 flex-shrink-0 p-4 flex items-center justify-center">
+                    <a href="/detil_produk/4" class="w-full h-full flex items-center justify-center">
+                        <div class="bg-gray-700 rounded-lg p-4 text-center w-full h-full flex flex-col items-center justify-between">
+                            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.cpdubai.com%2Fwp-content%2Fuploads%2F2018%2F10%2Fcarmel.png&f=1&nofb=1&ipt=e8d78434062e38d31f8676a539db76d2c752c627de33551750ce7c2c929fba86&ipo=images" alt="CremeRich" class="mb-4 rounded-md w-24 h-24 object-cover">
+                            <h3 class="text-xl font-semibold mb-2">CremeRich</h3>
+                            <p class="text-lg">Rp. 90.000</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="w-full sm:w-1/2 lg:w-1/5 flex-shrink-0 p-4 flex items-center justify-center">
+                    <a href="/detil_produk/5" class="w-full h-full flex items-center justify-center">
+                        <div class="bg-gray-700 rounded-lg p-4 text-center w-full h-full flex flex-col items-center justify-between">
+                            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Faldensicecream.com%2Fwp-content%2Fuploads%2F2021%2F02%2FDF_Sammies_KeyLime_M-1.png&f=1&nofb=1&ipt=e4b8b559899ea3cd8885a7c37ce8f24b4c57ab357c1f76591ac62e6150e3e396&ipo=images" alt="Dairy Free Ice Cream" class="mb-4 rounded-md w-24 h-24 object-cover">
+                            <h3 class="text-xl font-semibold mb-2">Dairy Free</h3>
+                            <p class="text-lg">Rp. 150.000</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="w-full sm:w-1/2 lg:w-1/5 flex-shrink-0 p-4 flex items-center justify-center">
+                    <a href="/detil_produk/6" class="w-full h-full flex items-center justify-center">
+                        <div class="bg-gray-700 rounded-lg p-4 text-center w-full h-full flex flex-col items-center justify-between">
+                            <img src="https://via.placeholder.com/150" alt="New Product" class="mb-4 rounded-md w-24 h-24 object-cover">
+                            <h3 class="text-xl font-semibold mb-2">Vienetta</h3>
+                            <p class="text-lg">Rp. 200.000</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- Controls -->
+            <button id="prevButton" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-900 bg-opacity-50 p-2 rounded-full hover:bg-opacity-75">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+            <button id="nextButton" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-900 bg-opacity-50 p-2 rounded-full hover:bg-opacity-75">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Carousel Functionality
+            const carousels = document.querySelectorAll('#carousel');
+            const totalItems = carousels[0].children[0].children.length; // Same items for both carousels
+             
+            function getVisibleItems() {
+                return window.innerWidth < 768 ? 1 : 5; // 1 item for mobile, 5 for desktop
+            }
+     
+            function getItemWidth(carousel) {
+                return carousel.children[0].children[0].offsetWidth;
+            }
+     
+            function updateCarousel(carousel, currentIndex, itemWidth) {
+                carousel.children[0].style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+            }
+     
+            carousels.forEach(carousel => {
+                let currentIndex = 0;
+                let visibleItems = getVisibleItems();
+                let itemWidth = getItemWidth(carousel);
+     
+                function showNextSlide() {
+                    if (currentIndex >= totalItems - visibleItems) {
+                        currentIndex = 0; // Loop back to the start
+                    } else {
+                        currentIndex++;
+                    }
+                    updateCarousel(carousel, currentIndex, itemWidth);
+                }
+     
+                function showPrevSlide() {
+                    if (currentIndex === 0) {
+                        currentIndex = totalItems - visibleItems; // Loop to the end
+                    } else {
+                        currentIndex--;
+                    }
+                    updateCarousel(carousel, currentIndex, itemWidth);
+                }
+     
+                carousel.querySelector('#prevButton').addEventListener('click', showPrevSlide);
+                carousel.querySelector('#nextButton').addEventListener('click', showNextSlide);
+     
+                // Auto slide every 3 seconds
+                setInterval(() => {
+                    visibleItems = getVisibleItems(); // Update visible items on resize
+                    itemWidth = getItemWidth(carousel); // Update item width on resize
+                    updateCarousel(carousel, currentIndex, itemWidth);
+                    showNextSlide();
+                }, 3000);
+     
+                // Adjust carousel when window is resized
+                window.addEventListener('resize', () => {
+                    visibleItems = getVisibleItems();
+                    itemWidth = getItemWidth(carousel); // Update item width on resize
+                    updateCarousel(carousel, currentIndex, itemWidth);
+                });
+            });
+     
+            // Dropdown menu functionality
+            document.getElementById('profileButton').addEventListener('click', () => {
+                const dropdownMenu = document.getElementById('dropdownMenu');
+                dropdownMenu.classList.toggle('hidden');
+            });
+     
+            // Hide dropdown if clicked outside
+            document.addEventListener('click', (event) => {
+                const dropdownMenu = document.getElementById('dropdownMenu');
+                if (!event.target.closest('#profileButton') && !event.target.closest('#dropdownMenu')) {
+                    dropdownMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+    
+    
+</body>
+
+</html>

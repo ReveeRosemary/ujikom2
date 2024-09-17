@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesanan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-200">
+    <!-- Navbar -->
+    <nav class="bg-gray-800 p-4 fixed top-0 left-0 w-full flex justify-between items-center">
+        <h1 class="text-2xl font-bold ml-3">IceSicle</h1>
+        <div class="relative">
+            <div id="profileButton" class="bg-gray-600 rounded-full w-8 h-8 cursor-pointer mr-3"></div>
+            <!-- Dropdown Menu -->
+            <div id="dropdownMenu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 text-gray-800 z-50">
+                <a href="cart.html" class="block px-4 py-2 hover:bg-gray-100">Keranjang</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Pesanan</a>
+                <a href="login.html" class="block px-4 py-2 hover:bg-gray-100">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Konten Pesanan -->
+    <div class="pt-20 max-w-4xl mx-auto p-6">
+        <h2 class="text-3xl font-bold mb-4">Pesanan</h2>
+        <p class="text-lg mb-6">
+            <a href="#" class="text-gray-200 mr-4">Menunggu Konfirmasi</a> 
+            <a href="#" class="text-yellow-400 mr-4">Dalam Perjalanan</a> 
+            <a href="#" class="text-green-500 mr-4">Sudah Sampai</a> 
+            <a href="#" class="text-red-500 mr-4">Kurir Tabrakan</a>
+        </p>
+        <div class="flex items-center justify-between bg-gray-100 p-4 rounded-lg shadow-md">
+            <div class="flex items-center">
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.chapmans.ca%2Fwp-content%2Fuploads%2F2019%2F07%2F062942001460_f_en-350x350.png&f=1&nofb=1&ipt=ba2b8ef311ee026ffdfe15909d49f1b2b3917500035fd505f05c860464f8cfe5&ipo=images" alt="Premium Ice Cream" class="w-24 h-24 mr-4">
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-900">Premium Ice Cream</h3>
+                    <p class="text-gray-900">Qty: 2</p>
+                    <p class="text-gray-900">Rp. 600.000</p>
+                </div>
+            </div>
+            <span class="text-green-500 text-lg font-semibold">Sudah Sampai</span>
+        </div>
+    </div>
+
+    <script>
+        // Toggle dropdown visibility
+        const profileButton = document.getElementById('profileButton');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+
+        profileButton.addEventListener('click', () => {
+            dropdownMenu.classList.toggle('hidden');
+        });
+
+        // Close dropdown if clicked outside
+        window.addEventListener('click', (e) => {
+            if (!profileButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                dropdownMenu.classList.add('hidden');
+            }
+        });
+    </script>
+
+</body>
+</html>

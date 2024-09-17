@@ -6,10 +6,10 @@
     <title>IceSicle</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-800 text-gray-200 flex items-center justify-center h-screen">
+<body class="bg-gray-800 text-white">
 
     <!-- Navbar -->
-    <nav class="bg-gray-900 p-4 fixed top-0 left-0 w-full flex justify-between items-center">
+    <nav class="bg-gray-900 p-4 flex justify-between items-center">
         <h1 class="text-2xl font-bold ml-3">IceSicle</h1>
         <div class="relative">
             <div id="profileButton" class="bg-gray-600 rounded-full w-8 h-8 cursor-pointer mr-3"></div>
@@ -21,30 +21,31 @@
             </div>
         </div>
     </nav>
-
     <!-- Product Card -->
-    <div class="bg-gray-300 p-8 rounded-lg shadow-md flex items-center relative" style="transform: scale(1.5);">
-        
-        <!-- Close Button -->
-        <button onclick="window.location.href='index.html'" class="absolute top-2 right-2 text-gray-800 font-bold">X</button>
-
-        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.chapmans.ca%2Fwp-content%2Fuploads%2F2019%2F07%2F062942001460_f_en-350x350.png&f=1&nofb=1&ipt=ba2b8ef311ee026ffdfe15909d49f1b2b3917500035fd505f05c860464f8cfe5&ipo=images" alt="Premium Ice Cream" class="w-60 h-60 object-cover rounded-lg">
-        <div class="ml-8">
-            <h2 class="text-2xl font-bold text-gray-800">Premium Ice Cream</h2>
-            <p class="text-gray-700">Chapman's</p>
-            <p class="text-gray-700">Rp. 300.000</p>
-            <div class="flex items-center mt-4">
-                <span class="text-gray-700">Kuantitas</span>
-                <div class="flex items-center border border-gray-400 rounded ml-2">
-                    <button id="decrementButton" class="px-3 py-2 text-gray-800">-</button>
-                    <input id="quantityInput" type="text" value="0" class="w-12 text-center border-none outline-none text-gray-800" readonly>
-                    <button id="incrementButton" class="px-3 py-2 text-gray-800">+</button>
+        <div class="container mx-auto py-8">
+            <div class="bg-gray-300 p-8 rounded-lg shadow-md flex items-center relative mx-auto max-w-lg mt-12 mb-8">
+                <!-- Close Button -->
+                <button onclick="window.location.href='index.html'" class="absolute top-2 right-2 text-gray-800 font-bold">X</button>
+            
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.chapmans.ca%2Fwp-content%2Fuploads%2F2019%2F07%2F062942001460_f_en-350x350.png&f=1&nofb=1&ipt=ba2b8ef311ee026ffdfe15909d49f1b2b3917500035fd505f05c860464f8cfe5&ipo=images" alt="Premium Ice Cream" class="w-40 h-40 object-cover rounded-lg">
+                <div class="ml-6">
+                    <h2 class="text-xl font-bold text-gray-800">Premium Ice Cream</h2>
+                    <p class="text-gray-700">Chapman's</p>
+                    <p class="text-gray-700">Rp. 300.000</p>
+                    <p class="text-gray-700">Stok: 20</p>
+                    <div class="flex items-center mt-2">
+                        <span class="text-gray-700">Kuantitas</span>
+                        <div class="flex items-center border border-gray-400 rounded ml-2">
+                            <button id="decrementButton" class="px-3 py-2 text-gray-800">-</button>
+                            <input id="quantityInput" type="text" value="0" class="w-12 text-center border-none outline-none text-gray-800" readonly>
+                            <button id="incrementButton" class="px-3 py-2 text-gray-800">+</button>
+                        </div>
+                    </div>
+                    <button class="mt-6 px-6 py-3 bg-red-600 text-white font-semibold rounded">BELI</button>
                 </div>
-                <p class="ml-6 text-gray-700">Stok: 20</p>
             </div>
-            <button class="mt-6 px-6 py-3 bg-red-600 text-white font-semibold rounded">BELI</button>
+                        
         </div>
-    </div>
 
     <!-- Script for dropdown menu and quantity buttons -->
     <script>

@@ -55,6 +55,10 @@ IceSicle adalah website Toko Ice Cream Online dengan tampilan sederhana.
 - Filament 3.2
 - CDN Tailwind
 
+## Tools yang Digunakan
+- Laragon
+- VSCode
+
 ## Persyaratan untuk Instalasi
 - PHP 8.1.1
 - Web Server

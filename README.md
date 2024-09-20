@@ -74,30 +74,30 @@ Sebelum memulai, pastikan Anda memenuhi persyaratan berikut:
 Pertama, clone repository dari GitHub dengan perintah berikut:
 ```bash
 git clone https://github.com/ReveeRosemary/ujikom2.git
-
+```
 ### 3. Masuk ke Direktori Proyek
 Setelah clone selesai, masuk ke direktori proyek:
 ```bash
 cd ujikom2
-
+```
 ### 4. Instalasi Dependensi
 Instal dependensi menggunakan Composer:
 ```bash
 composer install
-
+```
 ### 5. Salin File .env
-Salin file `.env.example` menjadi `.env`:
+Salin file '.env.example' menjadi '.env':
 ```bash
 cp .env.example .env
-
+```
 ### 6. Atur Kunci Aplikasi
 Generate kunci aplikasi menggunakan Artisan:
 
 ```bash
 php artisan key:generate
-
+```
 ### 7. Konfigurasi Database
-Edit file `.env` dan atur konfigurasi database:
+Edit file '.env' dan atur konfigurasi database:
 ```plaintext
 DB_CONNECTION=pgsql
 DB_HOST=127.0.0.1
@@ -105,15 +105,15 @@ DB_PORT=5432
 DB_DATABASE=nama_database
 DB_USERNAME=username_database
 DB_PASSWORD=password_database
-
+```
 ### 8. Jalankan Migrations
 Jalankan perintah berikut untuk membuat tabel di database:
 ```bash
 php artisan migrate
-
+```
 
 ### 9. Jalankan Server
 Jalankan server lokal dengan perintah berikut:
 ```bash
 php artisan serve
-
+```

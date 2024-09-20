@@ -44,10 +44,10 @@ IceSicle adalah website Toko Ice Cream Online dengan tampilan sederhana.
   - Password: `password`
 
 ### ERD
-![ERD](path/to/erd.png)
+![ERD](erd.png)
 
 ### UML
-![UML](path/to/uml.png)
+![UML](uml.png)
 
 
 ## Teknologi yang Digunakan

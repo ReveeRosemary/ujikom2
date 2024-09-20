@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\TokoResource\Pages;
+namespace App\Filament\Resources\UserResource\Pages;
 
-use App\Filament\Resources\TokoResource;
+use App\Filament\Resources\UserResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 
-class EditToko extends EditRecord
+class EditUser extends EditRecord
 {
-    protected static string $resource = TokoResource::class;
+    protected static string $resource = UserResource::class;
 
     protected function getHeaderActions(): array
     {

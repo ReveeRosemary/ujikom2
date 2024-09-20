@@ -17,6 +17,6 @@ class Pesanan extends Model
     }
 
     public function produk() {
-        return $this->hasMany(Produk::class, 'produk_id', 'id');
+        return $this->belongsTo(Produk::class, 'produk_id', 'id');
     }
 }

@@ -22,7 +22,7 @@ class TokosResource extends Resource
 {
     protected static ?string $model = Tokos::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-scale';
 
     public static function form(Form $form): Form
     {
@@ -32,20 +32,6 @@ class TokosResource extends Resource
                     TextInput::make('name')
                     ->required()
                     ->label('Nama Toko'),
-                    TextInput::make('email')
-                    ->required()
-                    ->label('Email'),
-                    TextInput::make('phone')
-                    ->required()
-                    ->numeric()
-                    ->label('Nomor HP'),
-                    TextInput::make('password')
-                    ->required()
-                    ->password()
-                    ->minLength(8)
-                    ->label('Password'),  
-                    FileUpload::make('foto')
-                    ->label('Foto Toko'),
                 ])
             ]);
     }
@@ -56,13 +42,15 @@ class TokosResource extends Resource
             ->columns([
                 TextColumn::make('name')
                 ->label('Nama Toko'),
-                TextColumn::make('email')
-                ->label('Email'),
-                TextColumn::make('phone')
-                ->label('Nomor HP'),
-                ImageColumn::make('foto')
-                ->label('Foto Toko'),
             ])
+            ->modifyQueryUsing(function (Builder $query) {
+                if (auth()->user()->role === 'Seller') {
+                    return $query->whereHas('toko', function ($query) {
+                        $query->where('user_id', auth()->id());
+                    });
+                }
+            })
+            
             ->filters([
                 //
             ])

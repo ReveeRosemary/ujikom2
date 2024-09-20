@@ -22,7 +22,7 @@ class PesananResource extends Resource
 {
     protected static ?string $model = Pesanan::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-inbox';
 
     public static function form(Form $form): Form
     {
@@ -105,6 +105,15 @@ class PesananResource extends Resource
                 ->getStateUsing(fn ($record) => $record->created_at->format('d/m/Y H:i')) // Format the date manually
                 ->sortable(),
             ])
+            ->modifyQueryUsing(function (Builder $query) {
+                if (auth()->user()->role === 'Seller') {
+                    return $query->whereHas('produk.toko', function (Builder $query) {
+                        $query->where('user_id', auth()->id());
+                    });
+                }
+            })
+            
+            
             ->filters([
                 //
             ])

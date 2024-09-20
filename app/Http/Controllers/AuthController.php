@@ -12,6 +12,11 @@ class AuthController extends Controller
 {
     public function showLoginForm()
     {
+        if (Auth::check()) {
+            // Redirect to product.index if already logged in
+            return redirect()->route('product.index');
+        }
+
         return view('auth.login');
     }
 
@@ -31,6 +36,11 @@ class AuthController extends Controller
 
     public function showRegistrationForm()
     {
+        if (Auth::check()) {
+            // Redirect to product.index if already logged in
+            return redirect()->route('product.index');
+        }
+
         return view('auth.register');
     }
 
@@ -54,7 +64,7 @@ class AuthController extends Controller
             'email' => $request->email,
             'phone' => $request->phone,
             'password' => Hash::make($request->password),
-            'role' => 'buyer', // Assign default role
+            'role' => 'Buyer', // Assign default role
         ]);
 
         return redirect()->route('auth.login')->with('status', 'Registration successful. Please login.');

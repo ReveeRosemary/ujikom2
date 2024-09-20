@@ -17,6 +17,7 @@ class RoleSeeder extends Seeder
         $role = [
             ['id' => 1, 'name' => 'Admin', 'guard_name' => 'web', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
             ['id' => 2, 'name' => 'Seller', 'guard_name' => 'web', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['id' => 3, 'name' => 'Buyer', 'guard_name' => 'web', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
         ];
         DB::table('roles')->insert($role);
     }

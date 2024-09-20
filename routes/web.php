@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\PesananController;
 
 /*
 |----------------------------------------------------------------------
@@ -15,7 +17,6 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-// Public routes (not protected by middleware)
 Route::get('/', function () {
     return redirect()->route('auth.login');
 });
@@ -28,16 +29,16 @@ Route::post('/register', [AuthController::class, 'register'])->name('auth.regist
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 
-// Routes protected by auth middleware
+
 Route::middleware('auth')->group(function () {
     Route::get('/index', [ProductController::class, 'index'])->name('product.index');
     Route::get('/detil_produk/{id}', [ProductController::class, 'show'])->name('product.details');
-    Route::get('/pesanan', [ProductController::class, 'pesanan'])->name('product.pesanan');
     
-    // Cart and Checkout routes
-    Route::get('/cart', [ProductController::class, 'cart'])->name('cart.index');
-    Route::post('/cart/add/{id}', [ProductController::class, 'addToCart'])->name('cart.add');
-    Route::post('/cart/update', [ProductController::class, 'updateCart'])->name('cart.update');
-    Route::post('/cart/remove/{id}', [ProductController::class, 'removeFromCart'])->name('cart.remove');
-    Route::post('/checkout', [ProductController::class, 'checkout'])->name('cart.checkout');
+
+    Route::post('/cart/add/{id}', [CartController::class, 'addToCart'])->name('cart.add');
+    Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+    Route::delete('/cart/delete/{id}', [CartController::class, 'destroy'])->name('cart.delete');
+    Route::post('/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
+
+    Route::get('/pesanan', [PesananController::class, 'index'])->name('pesanan.index');
 });

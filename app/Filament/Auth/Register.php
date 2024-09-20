@@ -19,15 +19,9 @@ class Register extends AuthRegister
             $this->getEmailFormComponent(),
             $this->getPasswordFormComponent(),
             $this->getPasswordConfirmationFormComponent(),
-            TextInput::make('phone')
+            TextInput::make('nama_toko')
                 ->required()
-                ->label('Nomor HP'),
-            Select::make('role')
-                ->options([
-                    'seller' => 'Seller',
-                ])
-                ->required()
-                ->label('Role'),
+                ->label('Nama Toko'),
         ])
         ->statePath('data');
     }
@@ -36,26 +30,20 @@ class Register extends AuthRegister
     {
         $data = $this->form->getState();
 
+        $role = 'Seller';
         // Buat User Baru
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'phone' => $data['phone'],
-            'role' => $data['role'],
+            'password' => $data['password'],
+            'role' => $role,
         ]);
 
-        // Buat Toko Baru yang berelasi dengan user
         $toko = Toko::create([
-            'name' => $data['name'] . "'s Toko", // Nama toko
-            'user_id' => $user->id, // Asosiasi dengan pengguna yang baru dibuat
-            'email' => $data['email'],
-            'phone' => $data['phone'],
-            'password' => $data['password'], // Ini mungkin sebaiknya tidak disimpan langsung
+            'name' => $data['nama_toko'],
+            'user_id' => $user->id
         ]);
 
-        // Update toko_id di tabel users
-        $user->toko_id = $toko->id;
         $user->save();
 
         // Login user setelah registrasi

@@ -3,6 +3,7 @@
 namespace App\Filament\Resources;
 
 use Filament\Forms;
+use App\Models\Toko;
 use Filament\Tables;
 use App\Models\Produk;
 use Filament\Forms\Form;
@@ -24,7 +25,7 @@ class ProdukResource extends Resource
 {
     protected static ?string $model = Produk::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-shopping-bag';
 
     public static function form(Form $form): Form
     {
@@ -44,8 +45,9 @@ class ProdukResource extends Resource
                     FileUpload::make('foto')
                     ->label('Foto Produk'),
                     Hidden::make('toko_id')
-                    ->default(auth()->user()->toko_id) // Mengatur nilai default sesuai auth user
-                    ->required(),
+                    ->default(function () {
+                        return Toko::where('user_id', auth()->id())->value('id'); // Fetch toko_id based on user_id
+                    })
                 ])
             ]);
     }
@@ -63,13 +65,16 @@ class ProdukResource extends Resource
                 TextColumn::make('stok')
                 ->label('Stok Tersisa'),
                 ImageColumn::make('foto')
-                ->label('Foto Toko'),
+                ->label('Foto Produk'),
             ])
             ->modifyQueryUsing(function (Builder $query) {
-                if (auth() -> user()->role === 'Seller') {
-                    return $query->where('toko_id', auth()->user()->toko_id);
+                if (auth()->user()->role === 'Seller') {
+                    return $query->whereHas('toko', function ($query) {
+                        $query->where('user_id', auth()->id());
+                    });
                 }
             })
+            
             ->filters([
                 //
             ])

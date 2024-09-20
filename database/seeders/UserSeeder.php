@@ -18,9 +18,8 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Admin',
                 'email' => 'admin@gmail.com',
-                'password' => Hash::make('password'),
-                'role' => 'admin',
-                'toko_id' => null, // Admin doesn't have a toko_id
+                'password' => 'password',
+                'role' => 'Admin', // Admin doesn't have a toko_id
             ],
             // [
             //     'name' => 'Toko 1',
@@ -39,9 +38,8 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Buyer',
                 'email' => 'buyer@gmail.com',
-                'password' => Hash::make('password'),
-                'role' => 'buyer',
-                'toko_id' => null, // Buyer doesn't have a toko_id
+                'password' => 'password',
+                'role' => 'Buyer',// Buyer doesn't have a toko_id
             ],
         ];
     

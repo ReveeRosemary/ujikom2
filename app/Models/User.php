@@ -19,11 +19,8 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $guarded = ['id'];
+    protected $table = 'users';
 
     /**
      * The attributes that should be hidden for serialization.
@@ -45,10 +42,9 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function toko()
+    public function tokos()
     {
-        return $this->hasOne(Toko::class);
+        return $this->hasOne(Tokos::class, 'toko_id', 'id');
     }
-    
 
 }

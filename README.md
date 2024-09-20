@@ -44,7 +44,7 @@ IceSicle adalah website Toko Ice Cream Online dengan tampilan sederhana.
   - Password: `password`
 
 ### ERD
-![ERD](erd.png)
+![ERD](https://raw.githubusercontent.com/ReveeRosemary/ujikom2/refs/heads/main/erd.PNG)
 
 ### UML
 ![UML](https://raw.githubusercontent.com/ReveeRosemary/ujikom2/refs/heads/main/UML.png)

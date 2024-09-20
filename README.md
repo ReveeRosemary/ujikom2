@@ -47,7 +47,7 @@ IceSicle adalah website Toko Ice Cream Online dengan tampilan sederhana.
 ![ERD](erd.png)
 
 ### UML
-![UML]((https://raw.githubusercontent.com/ReveeRosemary/ujikom2/refs/heads/main/UML.png)
+![UML](https://raw.githubusercontent.com/ReveeRosemary/ujikom2/refs/heads/main/UML.png)
 
 
 ## Teknologi yang Digunakan

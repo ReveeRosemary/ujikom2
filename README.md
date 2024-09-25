@@ -130,4 +130,4 @@ Jalankan server lokal dengan perintah berikut:
 php artisan serve
 ```
 
-Made by Jiisuu, forgiven, maliq.
+Made by Jiisuu, forgiven, maliq (3 nama ini adalah orang yang sama).

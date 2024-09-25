@@ -110,14 +110,24 @@ DB_DATABASE=nama_database
 DB_USERNAME=username_database
 DB_PASSWORD=password_database
 ```
-### 8. Jalankan Migrations
+
+### 8. Link Storage
+Link storage untuk menyimpan foto menggunakan artisan:
+
+```bash
+php artisan storage:link
+```
+
+### 9. Jalankan Migrations
 Jalankan perintah berikut untuk membuat tabel di database:
 ```bash
 php artisan migrate
 ```
 
-### 9. Jalankan Server
+### 10. Jalankan Server
 Jalankan server lokal dengan perintah berikut:
 ```bash
 php artisan serve
 ```
+
+Made by Jiisuu, forgiven, maliq.
